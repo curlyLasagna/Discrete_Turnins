@@ -1,0 +1,103 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+    \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+        \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+        \newenvironment{problem}[2][Problem]{\begin{trivlist}
+            \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+            \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+                \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+                \newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+                    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+                    \newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+                        \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+                        \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+                            \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+                             
+                            \begin{document}
+                             
+                            % --------------------------------------------------------------
+                            %                         Start here
+                            % --------------------------------------------------------------
+                            
+                            \lhead{MAT 250}
+                            \chead{Luis Gascon}
+                            \rhead{\today}
+                             
+                            % \maketitle
+                             
+                            \begin{problem}{42}
+                              % You can use theorem, proposition, exercise, or reflection here.  Modify x.yz to be whatever number you are proving
+                              % Delete this text and write theorem statement here.
+                              % We can draw the sets $\R$, $\Q$, $\I$, $\Z$, and $\N$. Let's assume our problem was: Prove that: $$(\forall x \in \N) \left [\sum_{i = 0}^{n}i = \frac{n(n+1)}{2}\right ]$$
+                              $\newline$
+                              If the argument is valid, identify the rule of inference that guarantees its validity. \\
+                              Otherwise, state whether the converse or the inverse error is made. \\
+                            \begin{flalign*}
+                            &a.\quad p \vee q \\
+                            &b.\quad q \rightarrow r \\
+                            &c.\quad p \wedge s \rightarrow t \\
+                            &d.\quad \sim r \\
+                            &e.\quad \sim q \rightarrow u \wedge s \\
+                            &f.\quad \therefore t \\
+                            \end{flalign*}
+                            \end{problem}
+                             
+                            \begin{proof}
+                            % Note 1: The * tells LaTeX not to number the lines.  If you remove the *, be sure to remove it below, too.
+                            % Note 2: Inside the align environment, you do not want to use $-signs.  The reason for this is that this is already a math environment. This is why we have to include \text{} around any text inside the align environment.
+                            % Note 3: If you want to include text on the right hand side: &&\text{<text>}
+                            $\newline$
+                            \begin{flalign*}
+                            \text{(1)}\qquad 
+                            &\sim r &&\text{by (d)} \\
+                            &q \rightarrow r &&\text{by (b)} \\
+                            \therefore &\sim q &&\text{by modus tollens} \\
+                            \text{(2)}\qquad
+                            &\sim q \rightarrow u \wedge s &&\text{by (e)} \\
+                            &\sim q &&\text{by (1)} \\
+                            \therefore\, &u \wedge s &&\text{by modus ponens} \\
+                            \text{(3)}\qquad
+                            & u \wedge s &&\text{by (2)} \\
+                            \therefore\, & s &&\text{by specialization} \\
+                            \text{(4)}\qquad 
+                            &p \vee q &&\text{by (a)} \\
+                            &\sim q &&\text{by (1)} \\
+                            \therefore\, &p &&\text{by elimination} \\
+                            \text{(5)}\qquad 
+                            &p &&\text{by (3)} \\
+                            &s &&\text{by (4)} \\
+                            \therefore\, &p \wedge s &&\text{by conjunction} \\
+                            \text{(6)}\qquad 
+                            &p \wedge s \rightarrow t &&\text{by (c)} \\
+                            &p \wedge s &&\text{by (5)} \\
+                            \therefore\, &t &&\text{by modus ponens}
+                            \end{flalign*}
+                            \end{proof}
+                             
+                            % --------------------------------------------------------------
+                            %     You don't have to mess with anything below this line.
+                            % --------------------------------------------------------------
+                            \end{document}
