@@ -2,15 +2,15 @@
 % This is all preamble stuff that you don't have to worry about.
 % Head down to where it says "Start here"
 % --------------------------------------------------------------
- 
+
 \documentclass[12pt]{article}
- 
-\usepackage[margin=1in]{geometry} 
+
+\usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amsthm,amssymb,scrextend}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
- 
+
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\I}{\mathbb{I}}
@@ -20,99 +20,117 @@
 \let\newproof\proof
 \renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
 % \newcommand{\expl}[1]{\text{\hfill[#1]}$}
- 
+
 \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
-    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-    \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
-        \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-        \newenvironment{problem}[2][Problem]{\begin{trivlist}
-            \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-            \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
-                \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-                \newenvironment{reflection}[2][Reflection]{\begin{trivlist}
-                    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-                    \newenvironment{proposition}[2][Proposition]{\begin{trivlist}
-                        \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-                        \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
-                            \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-                             
-                            \begin{document}
-                             
-                            % --------------------------------------------------------------
-                            %                         Start here
-                            % --------------------------------------------------------------
-                            
-                            \lhead{Math 250}
-                            \chead{Luis Gascon}
-                            \rhead{Chapter 4.2}
-                             
-                            \begin{problem}{2}
-                              $\newline$
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 
-                            \item \textbf{Theorem:} For every integer $m$, if $m$ is even then $3m+5$ is odd
-                            \end{problem}
-                            \begin{proof}
-                              ~\\
-                              Let $m \in \Z \ni m$ is even \\
-                              By definition of even, $m=2k$ for some $k \in \Z$
-                              \begin{align*}
-                                3m + 5 &=3(2k) + 5 && \text{by substitution} \\
-                                       &=6k + 5 && \text{by algebra} \\
-                                       &=2(3k+2) + 1 && \text{by factoring out 2}
-                              \end{align*}
-                              Let $t=3k+2$ \\
-                              $t \in \Z$ because $3,2,k \in \Z$ and $\Z$ are closed under sums and products. \\
-                              Therefore, $3m+5 = 2t$ where $t \in \Z$, so $3m+5$ is odd.
+\begin{document}
 
-                            \end{proof}
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
 
-                            \begin{problem}{9}
-                            $\newline$
+\lhead{Math 250}
+\chead{Luis Gascon}
+<<<<<<< HEAD
+\rhead{Section 4.2}
+=======
+\rhead{Chapter 4.2}
+>>>>>>> ace8925 (Added .DS store to .gitignore)
 
-                            \item \textbf{Theorem:} If an integer greater than 4 is a perfect square, then the immediately preceding integer is not prime
-                            \end{problem}
+\begin{problem}{2}
+$\newline$
 
-                            \begin{proof}
-                              ~\\
-                              Let $n \in \Z$ with $n > 4 \ni n$ is a perfect square \\
-                              By definition of a perfect square, $\exists \, n = k^{2} \ni k \in \Z$
-                              \begin{align*}
-                                n - 1 &= k^{2} - 1 && \text{by substitution} \\
-                                &= (k-1)(k+1) && \text{by algebra} \\
-                                k^2>4 && \text{by substitution} \\
-                                k>2 && \text{by algebra}\\
-                                k - 1 > 1 \; \& \; k+1 > 3 && \text{by algebra} \\ 
-                              \end{align*}
-                              $k^{2}-1$ is the product of two integers greater than 1. \\
-                              Therefore, the immediately preceding integer is composite by definition of composite.
-                            \end{proof}
+\item \textbf{Theorem:} For every integer $m$, if $m$ is even then $3m+5$ is odd
+\end{problem}
+\begin{proof}
+	~\\
+	Let $m \in \Z \ni m$ is even \\
+	By definition of even, $m=2k$ for some $k \in \Z$
+	\begin{align*}
+		3m + 5 & =3(2k) + 5   &  & \text{by substitution}    \\
+		       & =6k + 5      &  & \text{by algebra}         \\
+		       & =2(3k+2) + 1 &  & \text{by factoring out 2}
+	\end{align*}
+	Let $t=3k+2$ \\
+	$t \in \Z$ because $3,2,k \in \Z$ and $\Z$ are closed under sums and products. \\
+	Therefore, $3m+5 = 2t$ where $t \in \Z$, so $3m+5$ is odd.
 
-                            \pagebreak
+\end{proof}
 
-                            \begin{problem}{23}
-                            $\newline$
+\begin{problem}{9}
+$\newline$
 
-                            \item \textbf{Theorem:} The product of any even integer and any integer is even.\\
-                            True
-                            \end{problem}
-                            \begin{proof}
-                              ~\\
-                              Let $a \in \Z \ni a$ is even and $b \in \Z$. \\
-                              By definition of even, $\exists \, n \in \Z \ni a = 2n$ \\ \\
-                              Then
-                              \begin{align*}
-                                ab &= 2n\times b &&\text{by substitution} \\
-                                &= 2(n \times b) &&\text{by factoring out 2}\\
-                              \end{align*}
-                              \begin{minipage}{30em}
-                              Let $t=n\times b$. \\ 
-                              Then $t \in \Z$ because the products of integers are integers. \\ 
-                              Hence, $ab = 2t$, thus $ab$ is even by definition of even.
-                              \end{minipage}
-                            \end{proof}
+\item \textbf{Theorem:} If an integer greater than 4 is a perfect square, then the immediately preceding integer is not prime
+\end{problem}
+
+\begin{proof}
+	~\\
+	Let $n \in \Z$ with $n > 4 \ni n$ is a perfect square \\
+	By definition of a perfect square, $\exists \, n = k^{2} \ni k \in \Z$
+	\begin{align*}
+<<<<<<< HEAD
+		n - 1  = d^{2} - 1 &  & \text{by substitution} \\
+		= (k-1)(k+1)       &  & \text{by algebra}      \\
+		k^2>4              &  & \text{by substitution} \\
+		k>2                &  & \text{by algebra}      \\
+		k- 1 > 1 \; \& \; k+1 > 3
+=======
+		n - 1 & = k^{2} - 1  &  & \text{by substitution} \\
+		      & = (k-1)(k+1) &  & \text{by algebra}
+	\end{align*}
+	\begin{align*}
+		 & k^2>4                      &  & \text{by substitution} \\
+		 & k>2                        &  & \text{by algebra}      \\
+		 & k - 1 > 1 \; \& \; k+1 > 3                             \\
+>>>>>>> ace8925 (Added .DS store to .gitignore)
+	\end{align*}
+	$k^{2}-1$ is the product of two integers greater than 1. \\
+	Therefore, the immediately preceding integer is composite by definition of composite.
+\end{proof}
+
+\pagebreak
+
+\begin{problem}{23}
+$\newline$
+
+\item \textbf{Theorem:} The product of any even integer and any integer is even.\\
+True
+\end{problem}
+\begin{proof}
+	~\\
+	Let $a \in \Z \ni a$ is even and $b \in \Z$. \\
+	By definition of even, $\exists \, n \in \Z \ni a = 2n$ \\ \\
+	Then
+	\begin{align*}
+		ab & = 2n\times b    &  & \text{by substitution}    \\
+<<<<<<< HEAD
+		   & = 2(n \times b) &  & \text{by factoring out 2}
+=======
+		   & = 2(n \times b) &  & \text{by factoring out 2} \\
+>>>>>>> ace8925 (Added .DS store to .gitignore)
+	\end{align*}
+	\begin{minipage}{30em}
+		Let $t=n\times b$. \\
+		Then $t \in \Z$ because the products of integers are integers. \\
+		Hence, $ab = 2t$, thus $ab$ is even by definition of even.
+	\end{minipage}
+\end{proof}
 
 
-                            % --------------------------------------------------------------
-                            %     You don't have to mess with anything below this line.
-                            % --------------------------------------------------------------
-                            \end{document}
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}

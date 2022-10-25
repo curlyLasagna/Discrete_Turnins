@@ -1,0 +1,81 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\usepackage{tabulary}
+\usepackage{setspace}
+\pagestyle{fancy}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 250}
+\chead{Luis Gascon}
+\rhead{Section 4.3}
+% \maketitle
+
+\begin{problem}{23}
+$\newline$
+True or false? \\ If $k$ is any even integer and $m$ is any odd integer, then ${(k+2)}^{2} - {(m-1)}^{2}$ is even. Explain. \\ \\ False.
+\\ \\
+\begin{tabulary}{\textwidth }{@{} J J @{}}
+	1. The sum, product, and difference of any two even integers are even.
+	&5. The sum of any odd integer and any even integer is odd.          \\ \\
+	2. The sum and difference of any two odd integers are even.
+	&6. The difference of any odd integer minus any even integer is odd. \\ \\
+	3. The product of any two odd integers is odd.
+	&7. The difference of any even integer minus any odd integer is odd. \\
+	4. The product of any even integer and any odd integer is even.
+\end{tabulary}
+\end{problem}
+\begin{proof}
+	Let $k$ be an even integer and $m$ be an odd integer.
+	\begin{itemize}
+		\item $k+2$ is even since $k$ and 2 are even and the sum of even integers is even by 1.)
+		\item $(k+2)^{2}$ is even since $k+2$ is even and the product of even integers is even by 1.)
+		\item $m-1$ is even since $m$ and 1 are odd and the sum and difference of any two odd integers are even by 2.)
+		\item $(m-1)^{2}$ is odd since $m-1$ is odd and the product of odd integers is odd by 3.)
+		\item ${(k+2)}^{2} - {(m-1)}^{2}$ is odd since $(k+2)^{2}$ is even and $(m-1)^{2}$ is odd and the difference of any even integer minus any odd integer is odd by 7.)
+		      % The sum and difference of any two odd integers are even by 2.) \\
+	\end{itemize}
+\end{proof}
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}

@@ -1,0 +1,146 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+<<<<<<< HEAD
+\newcommand{\contra}{\hfill$\Rightarrow\!\Leftarrow$}
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+\newenvironment{contradiction}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\contra\qed}
+=======
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+>>>>>>> ace8925 (Added .DS store to .gitignore)
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 250}
+\chead{Luis Gascon}
+\rhead{Section 4.8}
+\begin{problem}{18}
+$\newline$
+<<<<<<< HEAD
+Prove if true and disprove if false.
+\end{problem}
+\textbf{a.} Prove that for every integer $a$ if $a^{3}$ is even then $a$ is even. \\
+\begin{proof}(by contraposition)
+	If $a$ is odd then $a^{3}$ is odd. \\
+	Let $a$ be odd, then $a = 2k + 1$ for some $k \in \Z$ by definition of odd.
+	\begin{align*}
+		a^{3} & = (2k+1)^{3}              &  & \text{by substitution} \\
+		a^{3} & = 2(4k^{3}+6k^{2}+3k) + 1 &  & \text{by algebra}
+	\end{align*}
+	Let $t = 4k^{3}+6k^{2}+3k$. \\
+	$t \in \Z$ since $4, 6, 3, \& \; k \in \Z$ because integers are closed under addition \& multiplication. \\
+	$a^{3} = 2t + 1$ is odd by definition of odd.
+	Therefore, $a^{3}$ is odd.
+\end{proof}
+\\ \\
+\textbf{b.} Prove that $\sqrt[3]{2}$ is irrational \\
+\begin{contradiction}(by contradiction)
+	$\newline$
+	$\sqrt[3]{2}$ is rational. \\
+	By definition of rational, $\exists \, a, b \in \Z$ with $b \ne 0$ and WLOG, $a$ and $b$ have no common factor
+	\begin{align*}
+		\sqrt[3]{2} & = \cfrac{a}{b}                 &  & \text{by substitution} \\
+		2           & = \cfrac{a^{3}}{b^{3}}         &  & \text{by algebra}      \\
+		2 (b^{3})   & = \cfrac{a^{3}}{b^{3}} (b^{3})                             \\
+		2(b^{3})    & = a^{3}
+	\end{align*}
+	Let $h=b^{3}$. $h \in \Z$ because integers are closed under multiplication. \\
+	So $a^{3}$ is even by definition of even. By part (a), since $a^{3}$ is even, $a$ is even. \\
+	Then $\exists \, k \in \Z \ni a = 2k$ by definition of even.
+	\begin{align*}
+		2b^{3} & = (2k)^{3}  &  & \text{by substitution}       \\
+		b^{3}  & = 4k^{3}    &  & \text{by algebra}            \\
+		b^{3}  & = 2(2k^{3}) &  & \text{by definition of even}
+	\end{align*}
+	Let $t = 2k^{3}$. $t \in \Z$ since $k, 2 \in \Z$ as integers are closed under multiplication. \\
+	So $b^{3}$ is even by definition of even. By part (a), since $b^{3}$ is even, $b$ is even. \\
+	Therefore, this contradicts the assumption that $a$ and $b$ doesn't have a common factor since $a$ and $b$ are both even. \\
+	So this contradicts the assumption that $\sqrt[3]{2}$ is a rational
+\end{contradiction}
+\pagebreak
+=======
+Prove if true and disprove if false. \\
+\textbf{a.} Prove that for every integer $a$ if $a^{3}$ is even then $a$ is even. \\
+\textbf{b.} Prove that $\sqrt[3]{2}$ is irrational
+\end{problem}
+
+\begin{proof}
+	\begin{align*}
+	\end{align*}
+\end{proof}
+>>>>>>> ace8925 (Added .DS store to .gitignore)
+
+\begin{problem}{23}
+$\newline$
+Prove that for any integer $a$, $9 \nmid (a^{2}-3)$
+\end{problem}
+<<<<<<< HEAD
+\begin{contradiction}(by contradiction) \\
+	Suppose not. $\exists \, a \in \Z \ni 9 \mid (a^{2}-3)$ \\
+	By the definition of divisibility, $\exists \, d \in \Z \ni a^{2}-3 = 9d$
+	\begin{align*}
+		a^{2} & = 9d + 3  &  & \text{by algebra} \\
+		a^{2} & = 3(3d+1)
+	\end{align*}
+	Let $k = 3d + 1$. $k \in \Z$ since $3, d, \& \, 1 \in \Z$ by the closure of addition \& multiplication \\
+	So $a^{2} = 3k$ by substitution, where $k \in \Z$. Therefore, $3 \mid a^{2}$ by definition of divisibility. \\
+	By 19.b, $\forall \, a \in \Z,\text{if } 3 \mid a^2 \rightarrow3 \mid a$.\\
+	Then by definition of divisibility, $\exists \, f \in \Z \ni a = 3f$
+	\begin{align*}
+		 & (3f)^{2}            = 3(3d+1)                                 &  & \text{by substitution} \\
+		 & \cfrac{9f^{2}}{3} = \cfrac{3(3d+1)}{3}                        &  & \text{by algebra}      \\
+		 & 3f^{2}            -3d = 1                                                                 \\
+		 & 3(f^{2}-d) = 1
+	\end{align*}
+	Let $x = f^{2}-d $ and $x \in \Z $ because $f, d$ \& $-1 \in \Z$ by the closure of integers of addition and multiplication.\\
+	So $3x = 1$ by substitution. This implies $3 \mid 1$ by definition of divisibility, which is false. \\
+	Therefore, $9 \mid (a^{2}-3)$ must be also be false.
+\end{contradiction}
+=======
+\begin{proof}
+	\begin{align*}
+	\end{align*}
+\end{proof}
+>>>>>>> ace8925 (Added .DS store to .gitignore)
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}

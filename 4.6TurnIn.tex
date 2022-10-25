@@ -1,0 +1,141 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+\usepackage{color, soul}
+\pagestyle{fancy}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 250}
+\chead{Luis Gascon}
+\rhead{Section 4.6}
+
+\begin{problem}{20}
+$\newline$
+For all real numbers $x$ and $y$, $\lceil xy \rceil = \lceil x \rceil \cdot \lceil y \rceil$ \\
+\textit{False}
+\end{problem}
+
+\begin{proof}
+	Let x = 1.2 and y = 1.3
+	\begin{align*}
+		\ceil*{x \cdot y}     & = \ceil*{1.2 \cdot 1.3}     \\
+		\ceil*{1.56}          & = 2                         \\
+		\ceil*{x} + \ceil*{y} & = \ceil*{1.2} + \ceil*{1.3} \\
+		2 + 2                 & = 4
+	\end{align*}
+	$2 \ne 4$, therefore the statement is false
+\end{proof}
+
+\begin{problem}{24}
+$\newline$
+For any integer $m$ and any real number $x$, if $x$ is not an integer, then $\lfloor x \rfloor + \lfloor m -x \rfloor = m - 1$
+\textit{True}
+\end{problem}
+\begin{proof}
+	Let $m \in \Z$ and $x \in \R \ni x \notin \Z$ \\
+	Let n = $\floor*{x}$. Then, by definition of floor, $n \in \Z \ni n \le x < n +1$ \\
+	Since $x \notin \Z, x \ne n$, so $n < x < n + 1$\\
+	\begin{align*}
+		 & m - n > m -x > m - n - 1 &  & \text{by algebra} \\
+		% & \floor*{m - x} = m - n - 1                        \\
+		% & n + m - n - 1 = m  - 1
+	\end{align*}
+	$-1,n,m \in \Z$ by closure of integers, so $m-n, m - n - 1 \in \Z$. \\
+	Since $m-n$, $m-n-1$ are consecutive integers,
+	\begin{align*}
+		\floor*{m-x}              & = m - n - 1      &  & \text{by definition of floor} \\
+		\floor*{x} + \floor*{m-x} & =  n + m - n - 1 &  & \text{by substitution}        \\
+		\floor*{x} + \floor*{m-x} & =m - 1           &  & \text{by algebra}
+	\end{align*}
+	Therefore, $\lfloor x \rfloor + \lfloor m -x \rfloor = m - 1$
+\end{proof}
+\pagebreak
+
+\begin{problem}{29}
+$\newline$
+For any odd integer $n$, \\ \\
+\centerline{$\ceil[\Bigg]{\cfrac{n^{2}}{4}} = \cfrac{n^{2}+3}{4}$}
+\end{problem}
+\textit{True} \\
+\addtolength{\jot}{8pt}
+\begin{proof}
+	Let $n$ be odd \\
+	$\exists \, k \in \Z \ni n = 2k+1$ by the definition of odd
+	\begin{align*}
+<<<<<<< HEAD
+		n^{2}            & = (2k+1)^{2}                          &  & \text{by substitution}             \\
+		n^{2}            & = 4k^{2}+4k+1                         &  & \text{by algebra}                  \\
+		\cfrac{n^{2}}{4} & = \cfrac{4k^{2}+4k+1 }{4}                                                     \\
+		\cfrac{n^{2}}{4} & = k^{2}+k+\cfrac{1}{4}                                                        \\
+		k^{2}            & +k < k^{2}+k+\cfrac{1}{4} < k^{2}+k+1 &  & \text{since } 0 < \cfrac{1}{4} < 1
+=======
+		n^{2}            & = (2k+1)^{2}                          &  & \text{by substitution} \\
+		n^{2}            & = 4k^{2}+4k+1                         &  & \text{by algebra}      \\
+		\cfrac{n^{2}}{4} & = \cfrac{4k^{2}+4k+1 }{4}                                         \\
+		\cfrac{n^{2}}{4} & = k^{2}+k+\cfrac{1}{4}                                            \\
+		k^{2}            & +k < k^{2}+k+\cfrac{1}{4} < k^{2}+k+1
+>>>>>>> ace8925 (Added .DS store to .gitignore)
+	\end{align*}
+	By definition of ceiling, since $k^{2}+k+1 \in \Z$ and $k^{2}+k \in \Z,$\\
+	$ k^{2}+k+1$ and $k^{2}+k$ are consecutive integers \\ \\
+	$\ceil[\Bigg]{\cfrac{n^{2}}{4}}$ = $k^{2}+k+1 \qquad$
+	\lbrack$k^{2}+k+1$ is the integer above $\cfrac{n^{2}}{4}$\Bigg\rbrack\\
+	\begin{align*}
+<<<<<<< HEAD
+		\cfrac{n^{2} + 3}{4} & =\cfrac{(4k^{2}+4k+1)+3}{4} &  & \text{by substitution} \\
+		                     & =\cfrac{4k^{2}+4k+4}{4}      &  & \text{by algebra}      \\
+		                     & = k^{2}+k+1
+	\end{align*}
+	So $\ceil[\Bigg]{\cfrac{n^{2}}{4}} = \cfrac{n^{2}+3}{4} $ by substitution
+=======
+		\cfrac{n^{2} + 3}{4} & = \cfrac{(4k^{2}+4k+1)+3}{4} &  & \text{by substitution} \\
+		                     & =\cfrac{4k^{2}+4k+4}{4}      &  & \text{by algebra}      \\
+		                     & = k^{2}+k+1
+	\end{align*}
+	So $\ceil[\Bigg]{\cfrac{n^{2}}{4}} = \cfrac{n^{2}+3}{4} $ by the definition of ceiling
+>>>>>>> ace8925 (Added .DS store to .gitignore)
+\end{proof}
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}
