@@ -44,75 +44,59 @@
 
 \lhead{Math 250}
 \chead{Luis Gascon}
-\rhead{Chapter 4.2}
+\rhead{Section 4.5}
 
-\begin{problem}{2}
+% \maketitle
+
+\begin{problem}{19}
 $\newline$
-
-\item \textbf{Theorem:} For every integer $m$, if $m$ is even then $3m+5$ is odd
-\end{problem}
-\begin{proof}
-	~\\
-	Let $m \in \Z \ni m$ is even \\
-	By definition of even, $m=2k$ for some $k \in \Z$
-	\begin{align*}
-		3m + 5 & =3(2k) + 5   &  & \text{by substitution}    \\
-		       & =6k + 5      &  & \text{by algebra}         \\
-		       & =2(3k+2) + 1 &  & \text{by factoring out 2}
-	\end{align*}
-	Let $t=3k+2$ \\
-	$t \in \Z$ because $3,2,k \in \Z$ and $\Z$ are closed under sums and products. \\
-	Therefore, $3m+5 = 2t$ where $t \in \Z$, so $3m+5$ is odd.
-
-\end{proof}
-
-\begin{problem}{9}
-$\newline$
-
-\item \textbf{Theorem:} If an integer greater than 4 is a perfect square, then the immediately preceding integer is not prime
+\textbf{Theorem:} For all integers $m$ and $n$, if $m$ and $n$ have the same parity, then $5m+7n$ is even. \\
+Divide into two cases: $m$ and $n$ are both even and $m$ and $n$ are both odd.
 \end{problem}
 
-\begin{proof}
-	~\\
-	Let $n \in \Z$ with $n > 4 \ni n$ is a perfect square \\
-	By definition of a perfect square, $\exists \, n = k^{2} \ni k \in \Z$
+\begin{proof} (by cases)
+	Let $m,n \in \Z \ni m,n$ have the same parity \\
+	$\exists \; k,l \in \Z \ni m=2k \: \text{and} \: n=2l$ or \\
+	$\exists \; k,l \in \Z \ni m=2k+1 \: \text{and} \: n=2l+1$ \\ \\
+	% $m$ and $n$ are even or $m$ and $n$ are odd \\ \\
+	\textbf{Case I} ($m=2k$ and $n=2l$):
 	\begin{align*}
-		n - 1 & = k^{2} - 1  &  & \text{by substitution} \\
-		      & = (k-1)(k+1) &  & \text{by algebra}
+		5m + 7n =\; & 5(2k) + 7(2l) &  & \text{by substitution} \\
+		=\;         & 10k + 14l     &  & \text{by algebra}      \\
+		=\;         & 2(5k + 7l)
 	\end{align*}
+	Let $t = 5k + 7l$. \\
+	$t \in \Z$ since $k,l,5,7 \in \Z$ and the set of integers are closed under sums of products.\\
+	So $5m+7n=2t$, where $t \ni \Z$ is even by definition of even.\\ \\
+	\textbf{Case II} ($m=2k+1$ and $n=2l+1$):
 	\begin{align*}
-		 & k^2>4                      &  & \text{by substitution} \\
-		 & k>2                        &  & \text{by algebra}      \\
-		 & k - 1 > 1 \; \& \; k+1 > 3                             \\
+		5m + 7n =\; & 5(2k+1) + 7(2l+1) &  & \text{by substitution} \\
+		=\;         & 10k + 5 + 14l + 7 &  & \text{by algebra}      \\
+		=\;         & 10k +14l + 12                                 \\
+		=\;         & 2(5k + 7l + 6)
 	\end{align*}
-	$k^{2}-1$ is the product of two integers greater than 1. \\
-	Therefore, the immediately preceding integer is composite by definition of composite.
+	Let $t = 5k + 7l +6$. \\
+	$t \in \Z$ since $k,l,5,6,7 \in \Z$ and the set of integers are closed under sum of products. \\
+	So $5m+7n=2t$, where $t \ni \Z$ is even by definition of even.\\
 \end{proof}
-
 \pagebreak
-
-\begin{problem}{23}
+\begin{problem}{24}
 $\newline$
-
-\item \textbf{Theorem:} The product of any even integer and any integer is even.\\
-True
+\textbf{Theorem:} For all integers $m$ and $n$, if $m \; mod \; 5 = 2$ and $n \; mod \; 5 = 1$ then $mn \; mod \; 5 = 2$.
 \end{problem}
 \begin{proof}
-	~\\
-	Let $a \in \Z \ni a$ is even and $b \in \Z$. \\
-	By definition of even, $\exists \, n \in \Z \ni a = 2n$ \\ \\
-	Then
+	Let $m, n \in \Z \ni m \; mod \; 5 = 2 \: \text{and} \: n \; mod \; 5 = 1$. \\
+	By Q.R. Theorem, $\exists \: d,f \in \Z \ni m = 5d+2$ and $n = 5f+1$
 	\begin{align*}
-		ab & = 2n\times b    &  & \text{by substitution}    \\
-		   & = 2(n \times b) &  & \text{by factoring out 2} \\
+		m \times n & = (5d+2)(5f+1)        &  & \text{by substitution} \\
+		           & = 25df + 5d + 10f + 2 &  & \text{by algebra}      \\
+		           & = 5(5df+d+2f) + 2
 	\end{align*}
-	\begin{minipage}{30em}
-		Let $t=n\times b$. \\
-		Then $t \in \Z$ because the products of integers are integers. \\
-		Hence, $ab = 2t$, thus $ab$ is even by definition of even.
-	\end{minipage}
+	Let $t = 5df+d+2f$. $t \in \Z$ since $d,f,5 \in Z$ \\
+	The set of integers are closed under sums \& products \\
+	Therefore, $mn = 5t + 2$ where $t \in \Z$ and $0 \le 2 < 5$. \\
+	So $mn \; mod \; 5 = 2 $ by Q.R Theorem.
 \end{proof}
-
 
 % --------------------------------------------------------------
 %     You don't have to mess with anything below this line.

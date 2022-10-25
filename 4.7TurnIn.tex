@@ -1,0 +1,110 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\contra}{\hfill$\Rightarrow\!\Leftarrow$}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+\newenvironment{contradiction}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\contra\qed}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 250}
+\chead{Luis Gascon}
+\rhead{Section 4.7}
+
+\begin{problem}{13}
+$\newline$
+S = The product of any irrational number and any nonzero rational number is irrational \\
+a. Write a negation for S. \\
+b. Prove S by contradiction.
+\end{problem}
+$\exists \; d \notin \Q \text{ and } f \in \Q \ni d \cdot f \in \Q$ \\
+\begin{contradiction}{(by contradiction)}
+	Suppose not. \\
+	Then, there exists an irrational number, call it $d$ and a nonzero rational number, call it $f$ such that the product of $d$ and $f$ is a rational.     \\
+	By definition of rational, \\ $f = h / j$ and $d \cdot f = k / l$ for some integers $h, j, k,$ and $l$ with $h=j\ne0$ and $l\ne0$ since $f$ is a nonzero rational number. \\
+	\begin{align*}
+		d \cdot \cfrac{h}{j} & = \cfrac{k}{l}   &  & \text{by substitution} \\
+		d                    & = \cfrac{kj}{lh} &  & \text{by algebra}      \\
+	\end{align*}
+    $lh\ne0$ by zero-product property so $d$ is a ratio of integers with a nonzero denominator.    \\
+	So $d \in \Q$, hence the supposition is false and the given statement is true
+\end{contradiction}
+\begin{problem}{22}
+$\newline$
+\textbf{Theoerm:} For every real number $r$, if $r^{2}$ is irrational then $r$ is irrational. \\
+Write what you would suppose and what you would need to show to prove this statement by: \\ \\
+a. contradiction \\
+Suppose not. \\
+That is suppose $\exists \, r \in \R \ni r^{2} \notin \Q$ and $r \in \Q$ \\ \\
+b. contraposition \\
+Suppose $\forall \, r \in \R$, if $r \in \Q \rightarrow r^{2} \in \Q$ \\
+\end{problem}
+\pagebreak
+\begin{problem}{24}
+$\newline$
+Prove by contraposition and contradiction \\
+\textbf{Theoerm:} The reciprocal of any irrational number is irrational.
+\end{problem}
+\begin{contradiction}{(by contradiction)}
+	Suppose not. \\
+	Then $\exists \, k \notin \Q \ni \cfrac{1}{k} \in \Q$ \\
+	By definition of a rational, $1/k = a/b \ni a,b \in \Z$ with $b\ne0$
+	\begin{align*}
+		\cfrac{1}{k} & = \cfrac{a}{b}                        \\
+		k            & = \cfrac{b}{a} &  & \text{by algebra}
+	\end{align*}
+	$a$ and $b$ are both integers and $k$ is a ratio of integers with a nonzero denominator. \\
+	Hence $k$ is a rational. \\
+	Hence the supposition is false and the given statement is true
+\end{contradiction} \\
+\begin{proof}{(by contraposition)} \\
+	$\forall \, \cfrac{1}{r} \in \Q \ni r \in \Q$ \\
+	By definition of rational, $r = a / b$ for some integer $a$ and $b$ with $b\ne0$ \\
+	\begin{align*}
+		\cfrac{1}{r} & = \cfrac{1}{a/b}                        \\
+		r            & = \cfrac{b}{a} &  & \text{by algebra}
+	\end{align*}
+	$a$ and $b$ are both integers and $r$ is a ratio of integers with a nonzero denominator, \\
+	Hence $r$ is a rational. \\
+\end{proof}
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}

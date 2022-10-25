@@ -44,75 +44,40 @@
 
 \lhead{Math 250}
 \chead{Luis Gascon}
-\rhead{Chapter 4.2}
+\rhead{Section 4.4}
 
-\begin{problem}{2}
+% \maketitle
+
+\begin{problem}{28}
 $\newline$
-
-\item \textbf{Theorem:} For every integer $m$, if $m$ is even then $3m+5$ is odd
-\end{problem}
-\begin{proof}
-	~\\
-	Let $m \in \Z \ni m$ is even \\
-	By definition of even, $m=2k$ for some $k \in \Z$
-	\begin{align*}
-		3m + 5 & =3(2k) + 5   &  & \text{by substitution}    \\
-		       & =6k + 5      &  & \text{by algebra}         \\
-		       & =2(3k+2) + 1 &  & \text{by factoring out 2}
-	\end{align*}
-	Let $t=3k+2$ \\
-	$t \in \Z$ because $3,2,k \in \Z$ and $\Z$ are closed under sums and products. \\
-	Therefore, $3m+5 = 2t$ where $t \in \Z$, so $3m+5$ is odd.
-
-\end{proof}
-
-\begin{problem}{9}
-$\newline$
-
-\item \textbf{Theorem:} If an integer greater than 4 is a perfect square, then the immediately preceding integer is not prime
+\textbf{Theorem:} For all integers $a,b,$ and $c$, if $a \mid bc$ then $a \mid b$ or $a \mid c$.
 \end{problem}
 
 \begin{proof}
-	~\\
-	Let $n \in \Z$ with $n > 4 \ni n$ is a perfect square \\
-	By definition of a perfect square, $\exists \, n = k^{2} \ni k \in \Z$
+	Let $a, b, c \in \Z \ni a \mid bc$ \\
+	Since $a \mid bc$, $\exists \; d \in \Z \ni ad = bc$ \\
 	\begin{align*}
-		n - 1 & = k^{2} - 1  &  & \text{by substitution} \\
-		      & = (k-1)(k+1) &  & \text{by algebra}
 	\end{align*}
-	\begin{align*}
-		 & k^2>4                      &  & \text{by substitution} \\
-		 & k>2                        &  & \text{by algebra}      \\
-		 & k - 1 > 1 \; \& \; k+1 > 3                             \\
-	\end{align*}
-	$k^{2}-1$ is the product of two integers greater than 1. \\
-	Therefore, the immediately preceding integer is composite by definition of composite.
 \end{proof}
 
-\pagebreak
-
-\begin{problem}{23}
+\begin{problem}{29}
 $\newline$
-
-\item \textbf{Theorem:} The product of any even integer and any integer is even.\\
-True
+\textbf{Theorem:} For all integers $a$ and $b$, if $a \mid b$ then $a^{2} \mid b^{2}$.
 \end{problem}
-\begin{proof}
-	~\\
-	Let $a \in \Z \ni a$ is even and $b \in \Z$. \\
-	By definition of even, $\exists \, n \in \Z \ni a = 2n$ \\ \\
-	Then
+\begin{proof} Let $a,b \in \Z \ni a$ divides $b$ \\
+	By definition of divisibility,
+	\begin{center}
+		$\exists \; k \in \Z \ni b = ak $
+	\end{center}
 	\begin{align*}
-		ab & = 2n\times b    &  & \text{by substitution}    \\
-		   & = 2(n \times b) &  & \text{by factoring out 2} \\
+		b^{2} & = (ak)^{2} &  & \text{by substitution}          \\
+		      & = (ak)(ak) &  & \text{by algebra}               \\
+		      & = a(kak)   &  & \text{by associative property } \\
 	\end{align*}
-	\begin{minipage}{30em}
-		Let $t=n\times b$. \\
-		Then $t \in \Z$ because the products of integers are integers. \\
-		Hence, $ab = 2t$, thus $ab$ is even by definition of even.
-	\end{minipage}
+	Let $t = (kak)$, $t \in \Z$ since $a,k \in \Z$ \\
+	The sum and products of integers is an integer. \\
+	Therefore, $a^{2} \mid b^{2}$ by definition of divisibility since $b^{2} = at$ where $t \in \Z$ by substitution
 \end{proof}
-
 
 % --------------------------------------------------------------
 %     You don't have to mess with anything below this line.
