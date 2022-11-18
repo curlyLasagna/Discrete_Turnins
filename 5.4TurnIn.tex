@@ -1,0 +1,111 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 250}
+\chead{Luis Gascon}
+\rhead{Section 5.4}
+
+\begin{problem}{2 WebAssign}
+$\newline$
+Suppose that $f_{0}, f_{1}, f_{2}, \ldots$ is a sequence as follows. \\ \\
+$ f_{0} = 5, \: f_{1} = 16, $                                       \\
+$ f_{k} = 7f_{k-1} - 10f_{k-2} \text{ for every integer } k \ge 2 $ \\ \\
+Prove that $f_{n}=3 \cdot 2^{n} + 2 \cdot 5^{n}$ for each integer $n \ge 0$
+\end{problem}
+\begin{proof}(by strong induction) \\
+	Let the property $P(n)$ be the sentence ``$f_{n}=3 \cdot 2^{n} + 2 \cdot 5^{n}$''. \\ \\
+	$P(n)\longrightarrow \qquad f_{n}=3 \cdot 2^{n} + 2 \cdot 5^{n}. $
+	\begin{flalign*}
+		\textbf{Basis step; } & P(0): 3 \cdot 2^{0} + 2 \cdot 5^{0}. \text{ True, since } 5  = 3 + 2  & \\
+		                      & P(1): 3 \cdot 2^{1} + 2 \cdot 5^{1}. \text{ True, since } 16 = 6 + 10 &
+	\end{flalign*}
+	\textbf{Inductive step:} Let $k \in \Z \ni k \ge 1$. \\
+	Assume $P(i)$ is true $\forall i \in \Z \ni 0 \le i \le k$. That is $f_{i}=3 \cdot 2^{i}+2 \cdot 5^{i}$ \\
+	Since $k + 1 \ge 2$, $f_{k+1}=7(f_{k}) - 10(f_{k-1})$ by the sequence. \\
+	\lbrack \textbf{NTS:} $P(k+1) \text{ is true, that is } f_{k+1} = 3 \cdot 2^{k+1}+2 \cdot 5^{k+1}$ \rbrack
+	\begin{flalign*}
+		f_{k+1} & = 7(f_{k}) - 10(f_{k-1})                                                                               \\
+		        & = 7(3 \cdot 2^{k} + 2 \cdot 5^{k}) - 10(3 \cdot 2^{k-1} + 2 \cdot 5^{k-1}) &  & \text{by substitution} \\
+		        & = 21(2^{k})+14(5^{k}) - 30(2^{k-1})-20(5^{k-1})                            &  & \text{by algebra}      \\
+		        & = 21(2^{k})+14(5^{k}) - 15 \cdot 2(2^{k-1})-4 \cdot 5(5^{k-1})                                         \\
+		        & = 21(2^{k})+14(5^{k}) - 15 \cdot 2^{k}-4 \cdot 5^{k}                                                   \\
+		        & = 2^{k}(21-15) + 5^{k}(14-4)                                                                           \\
+		        & = 2^{k}(6) + 5^{k}(10)                                                                                 \\
+		        & = 2^{k}(2 \cdot 3) + 5^{k}(5 \cdot 2)                                                                  \\
+		        & = 3\cdot2^{k+1} + 2 \cdot 5^{k+1}
+	\end{flalign*}
+\end{proof}
+\newpage
+\begin{problem}{8a}
+$\newline$
+Suppose that $h_{0}, h_{1}, h_{2}, \ldots$ is a sequence defined as follows: \\ \\
+$h_{0} = 1, h_{1} = 2, h_{2} = 3$, \\
+$h_{k} = h_{k-1} + h_{k-2}+h_{k-3}$ for each integer $k \ge 3$. \\ \\
+Prove that $h_{n}\le3^{n}$ for every integer $n\ge0$.
+\end{problem}
+
+\begin{proof}(by strong induction) \\
+	Let the property $P(n)$ be the sentence ``$h_{n} \le 3^{n}$'' \\ \\
+	$P(n)\longrightarrow \qquad h_{n} \le 3^{n}$
+	\begin{flalign*}
+		\textbf{Basis step; } & P(0): h_{0} \le 3^{0}. \text{ True, since } 1 \le 3^{0} & \\
+		                      & P(1): h_{1} \le 3^{1}. \text{ True, since } 2 \le 3^{1} & \\
+		                      & P(2): h_{2} \le 3^{2}. \text{ True, since } 3 \le 3^{2} &
+	\end{flalign*}
+	\textbf{Inductive step:} Let $k \in \Z \ni k \ge 2$ \\
+	Assume $P(i)$ is true for all $0 \le i \le k$, that is $h_{i} \le 3^{i}$ for $0 \le i \le k$ \\
+	Since $k + 1 \ge 3$, $h_{k+1}=h_{k}+h_{k-1}+h_{k-2}$ by the sequence. \\
+	\lbrack \textbf{NTS:} $P(k+1)$ is true, that is $h_{k+1} \le 3^{k+1}$ since $k\ge2 \text{ then } k+1 \ge 3$ \rbrack
+	\begin{align*}
+		h_{k+1} & \le 3^{k}+3^{k-1}+3^{k-2}                                       &  & \text{by substitution} \\
+		        & \le 3^{3} \cdot 3^{k-3} + 3^{2} \cdot 3^{k-3} + 3 \cdot 3^{k-3} &  & \text{by algebra}      \\
+		        & \le (3^{k-3})(3^{3}+3^{2}+3)                                                                \\
+		        & \le (3^{k-3})(39) \le 3^{k+1} \\
+		        & \therefore h_{k+1} \le 3^{k+1}
+	\end{align*}
+\end{proof}
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}

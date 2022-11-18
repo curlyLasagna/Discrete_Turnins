@@ -1,0 +1,104 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[mathscr]{euscript}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\definecolor{palecornflowerblue}{rgb}{0.67, 0.8, 0.94}
+\definecolor{anti-flashwhite}{rgb}{0.95, 0.95, 0.96}
+\definecolor{floralwhite}{rgb}{1.0, 0.98, 0.94}
+\definecolor{ghostwhite}{rgb}{0.97, 0.97, 1.0}
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 250}
+\chead{Luis Gascon}
+\rhead{Section 6.1}
+
+% \vspace{4cm}
+\begin{tcolorbox}[width=\textwidth, title={Problem 6a \& 6b}, colback=white]
+	\begin{center}
+		% In case I want a box around it again. Don't judge
+		\begin{tcolorbox}[width=.675\textwidth, colback=white, frame empty, boxrule=0pt]
+			\setlength{\abovedisplayskip}{0pt}
+			\setlength{\belowdisplayskip}{0pt}
+			\begin{align*}
+				\text{Let } & A = \{x \in \Z \mid x = 5a + 2 \text{ for some integer } a\},  \\
+				            & B = \{y \in \Z \mid y = 10b - 3 \text{ for some integer } b\}, \\
+				            & C = \{z \in \Z \mid z = 10c + 7 \text{ for some integer } c\}.
+			\end{align*}
+		\end{tcolorbox}
+	\end{center}
+	Prove or disprove each of the following statements. \\
+	\textbf{a.} $A \subseteq B$ \textit{False} \\
+	\begin{proof}[Disproof]
+		$12 \in A$ since $12 = 5(2) + 2$ but $12\notin B$ \\
+		since $12=10b-3 \iff 15 = 10b$ for some integer $b$ but $ 10 \nmid 15$.
+	\end{proof} \\
+	\textbf{b.} $B \subseteq A$ \textit{True} \\
+	\begin{proof}
+		Let $x\in B$ then $x\in \Z \ni x = 10b-3$ for some integer $b$.
+		\begin{align*}
+			x & = 10b -3                            \\
+			  & = 5(2b-1) +2 &  & \text{by algebra}
+		\end{align*}
+		Let $a = 2b - 1$. $a \in \Z$ by the closure of integers by addition and multiplication. \\
+		So $x = 5a+2$ where $a \in \Z$. \\
+		$\therefore x \in A$.
+	\end{proof}
+\end{tcolorbox}
+\begin{tcolorbox}[width=\textwidth, title={Problem 32b}, colback=white]
+	$\newline$
+	Suppose $X = \{a,b\}$ and $Y = \{x,y\}$. Find $\mathcal{P}(X \times Y)$ \\ \\
+	$X \times Y = \{(a,x), (a,y), (b,x), (b,y)\}$
+	\begin{flalign*}
+		\mathcal{P}(X \times Y) = & \:\{ \emptyset , \: \left\{\left(a,\:x\right)\right\}, \:\left\{\left(a,\:y\right)\right\}, \:\left\{\left(b,\:x\right)\right\},\:\left\{\left(b,\:y\right)\right\}, & \\
+		                          & \:\left\{\left(a,\:y\right),\:\left(a,\:x\right)\right\}, \:\left\{\left(b,\:x\right),\:\left(a,\:x\right)\right\},                                                  & \\
+		                          & \:\left\{\left(b,\:y\right)\right\}, \:\left(a,\:x\right)\right\}, \:\left\{\left(b,\:x\right),\:\left(a,\:y\right)\right\},                                         & \\
+		                          & \:\left\{\left(b,\:y\right), \:\left(a,\:y\right)\right\}, \:\left\{\left(b,\:y\right),\:\left(b,\:x\right)\right\},                                                 & \\
+		                          & \:\left\{\left(b,\:x\right),\:\left(a,\:y\right),\:\left(a,\:x\right)\right\},                                                                                       & \\ &\:\left\{\left(b,\:y\right), \:\left(a,\:y\right),\:\left(a,\:x\right)\right\}, &\\
+		                          & \:\left\{\left(b,\:y\right),\:\left(b,\:x\right),\:\left(a,\:x\right)\right\},                                                                                       & \\
+		                          & \:\left\{\left(b,\:y\right),\:\left(b,\:x\right),\:\left(a,\:y\right)\right\},                                                                                       & \\
+		                          & \:\left\{\left(a,\:x\right),\:\left(a,\:y\right),\:\left(b,\:x\right),\:\left(b,\:y\right)\right\}                                                                   & \\
+	\end{flalign*}
+\end{tcolorbox}
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}

@@ -1,0 +1,74 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 250}
+\chead{Luis Gascon}
+\rhead{Section 8.4}
+
+\begin{problem}{13a}
+$\newline$
+Prove that for every integer $n\ge1$, $10^{n}\equiv (-1)^{n}\pmod{11}$.
+\end{problem}
+\begin{proof}(by induction): \\
+	Let $P(n)$ be the statement ``$10^{n} \equiv (-1)^{n}\pmod{11} \: \forall \, n \in \Z \ni n \ge 1$'' \\ \\
+	$P(n)\longrightarrow \qquad 10^{n}\equiv (-1)^{n}\pmod{11}$ \\ \\
+	\textbf{Basis step:} $P(1): 10^{1} \overset{?}{\equiv} -1^{1}$(mod 11). True since $11 \mid 10 + 1$\\
+	\textbf{Inductive step:} Let $k \in \Z \ni k \ge 1$. Assume $P(k)\text{: } 10^{k}\equiv (-1)^{k}\pmod{11}$ \\
+	By definition of divisibility, $\exists \, r \in \Z \ni 11r = 10^{k}- (-1)^{k}$ or $11r = 10^{k}+ 1^{k}$\\
+	\lbrack \textbf{NTS:} $10^{k+1}\equiv(-1)^{k+1}\pmod{11}$ or $11 \mid 10^{k+1}+1^{k+1}$ \rbrack
+	\begin{align*}
+		11r          & = 10^{k} - (-1)^{k}                                          \\
+		11r \cdot 10 & = 10^{k} \cdot 10 - (-1)^{k} \cdot 10 &  & \text{by algebra} \\
+		110r         & = 10^{k+1} + (-1)^{k+1} \cdot 10 \\
+      110r - 11^{k+1}
+	\end{align*}
+	Let $t = 10^{k}-r$. $t \in \Z$ since $10^{k}, -1, r \in \Z$. \\
+	By substitution, $11t = 10^{k+1}- (-1)^{k+1}$ and by \\
+	definition of divisibility, $11 \mid (10^{k+1} - (-1)^{k+1})$
+\end{proof}
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}

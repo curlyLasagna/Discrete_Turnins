@@ -1,0 +1,77 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 250}
+\chead{Luis Gascon}
+\rhead{Section 5.7}
+
+\begin{problem}{38}
+$\newline$
+Use mathematical induction to verify the correctness of the formula obtained. \\
+$t_{k} = t_{k-1}+3k+1$, for each integer $k\ge1$ \\
+$t_{0}=0$
+% You can use theorem, proposition, exercise, or reflection here.  Modify x.yz to be whatever number you are proving
+% Delete this text and write theorem statement here. We can draw the sets $\R$, $\Q$, $\I$, $\Z$, and $\N$. Let's assume our problem was: Prove that: $$(\forall x \in \N) \left [\sum_{i = 0}^{n}i = \frac{n(n+1)}{2}\right ]$$
+\end{problem}
+
+\begin{proof}(by induction) \\
+	Let $P(n)\text{: } t_{n}=n+\cfrac{3n(n+1)}{2}$ for $n\ge0$ \\ \\
+	$P(n)\longrightarrow \qquad t_{n}=n+\cfrac{3n(n+1)}{2}$ \\ \\
+	\textbf{Basis step:} $P(0) = 0 + \cfrac{3(0)(0+1)}{2}$. True since $t_{0}=0$ \\ \\
+	\textbf{Inductive step:} Let $k \in \Z \ni k \ge 0$. Assume $P(k)$, that is $t_{k}= k + \cfrac{3k(k+1)}{2}$ \\
+	\lbrack \textbf{NTS:} $P(k+1)$: $t_{k+1}=(k+1) + \cfrac{3(k+1)(k+1+1)}{2}$ \rbrack
+	\begin{align*}
+		t_{k+1} & = t_{k} + 3(k+1) +1                                                          \\
+		        & = k + \cfrac{3k(k+1)}{2} + 3(k+1) +1             &  & \text{by substitution} \\
+		        & = (k+1) + \cfrac{3k(k+1)}{2} + \cfrac{6(k+1)}{2} &  & \text{by algebra}      \\
+		        & = (k+1) + \cfrac{(k+1)}{2} \cdot 3(k + 2)                                         \\
+		        & = (k+1) + \cfrac{3(k+1)(k+2)}{2}
+	\end{align*}
+\end{proof}
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}

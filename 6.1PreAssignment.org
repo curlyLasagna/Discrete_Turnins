@@ -1,0 +1,16 @@
+#+title: 6.1 Pre Assignment
+#+options: author:nil date:nil toc:nil
+
+#+begin_latex
+Let $A = \{c,d,f,g\}, B = \{f,j\} \text{ and } C = \{d,g\}$ \\
+Answer each of the following questions. Give reasons for your answers. \\
+
+Is $C \subseteq A?$  \\
+#+end_latex
+
+#+begin_latex
+Let $S = \{2,4,6\}$ and $T = \{1, 3, 5\}$. Use the set-roster notation ot write
+each of the following sets and indicate the number of elements that are in each set. \\
+
+$S \times T$
+#+end_latex

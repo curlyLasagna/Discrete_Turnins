@@ -1,0 +1,111 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 250}
+\chead{Luis Gascon}
+\rhead{Section 5.2}
+\begin{problem}{9}
+$\newline$
+For every integer $n\ge3$, \\
+$4^{3}+4^{4}+4^{5}+\cdots + 4^{n} = \cfrac{4(4^{n}-16)}{3}$
+\end{problem}
+
+\begin{proof}(by induction) \\
+	$P(n): 4^{3}+4^{4}+4^{5}+\cdots + 4^{n} = \cfrac{4(4^{n}-16)}{3}$ \\
+	\textbf{Base case;} $P(3)$: `` $ 4^{3} \overset{?}{=} \cfrac{4 \cdot 48}{3}$ '' $64 \overset{\checkmark}{=} 64$. True for $P(3)$ \\ \\
+	\textbf{Inductive step:} Let $k \in \Z \ni k \ge 3$ \\
+	Assume $P(k)$. That is $4^{3}+4^{4}+4^{5}+ \cdots + 4^{k} = \cfrac{4(4^{k}-16)}{3}$ \\
+	\lbrack NTS $4^{3}+4^{4}+4^{5}+ \cdots + 4^{k}+ 4^{k+1} = \cfrac{4(4^{k+1}-16)}{3}$ \rbrack
+	\begin{align*}
+		4^{3}+ \cdots + 4^{k} + 4^{k+1} & = \cfrac{4(4^{k}-16)}{3} + 4^{k+1}        &  & \text{by inductive hypothesis} \\
+		                                & = \cfrac{4^{k+1} - 64 + 3(4^{k+1})}{3}    &  & \text{by algebra}              \\
+		                                & = \cfrac{1(4^{k+1}) - 64 + 3(4^{k+1})}{3} &  &                                \\
+		                                & = \cfrac{4(4^{k+1}) - 64}{3}                                                  \\
+		                                & = \cfrac{4(4^{k+1}-16)}{3}
+	\end{align*}
+	$\therefore P(n)$ holds for $n = k + 1$ and the proof of the induction step is complete. \\
+	\textbf{Conclusion:} By the principle of induction, $P(n)$ is true for all $n\ge3 \in \Z$.
+\end{proof}
+
+\pagebreak
+\begin{problem}{11}
+$\newline$
+$1^{3}+2^{3}+\cdots+n^{3}= \left[ \cfrac{n(n+1)}{2} \right]^{2}\!,$ for every integer $n \ge 1$.
+\end{problem}
+\begin{proof}(by induction) \\
+	$P(n):1^{3}+2^{3}+\cdots+n^{3}= \left[ \cfrac{n(n+1)}{2} \right]^{2}\!$ \\
+	\textbf{Base case;} $P(1)$: `` $1^{3} \overset{?}{=} \left[ \cfrac{1(2)}{2} \right]^{2}\! $ '' $1 \overset{\checkmark}{=} 1$. True for $P(1)$ \\ \\
+	\textbf{Inductive step:} Let $k  \in \Z \ni k\ge1$ \\
+	Assume $P(k)$. That is $1^{3}+2^{3}+\cdots+k^{3}= \left[ \cfrac{k(k+1)}{2} \right]^{2}\!$ \\
+	\lbrack NTS $1^{3}+\cdots+k^{3} + (k+1)^{3}= \left[ \cfrac{(k+1)(k+2)}{2} \right]^{2}\!$ \\ or equivalently $\cfrac{(k+1)(k+2)(k+1)(k+2)}{4}$ \rbrack
+	\begin{align*}
+		1^{3}+\cdots+k^{3} + (k+1)^{3} & = \left[ \cfrac{k(k+1)}{2} \right ]^{2} + (k+1)^{3}  &  & \text{by inductive hypothesis} \\
+		                               & = \cfrac{k^{4}+2k^{3}+k^{2}+4(k^{3}+3k^{2}+3k+1)}{4} &  & \text{by algebra}              \\
+		                               & = \cfrac{k^{4}+6k^{3}+13k^{2}+12k+4}{4}
+	\end{align*}
+	$\therefore P(n)$ holds for $n = k + 1$ and the proof of the induction step is complete. \\
+	\textbf{Conclusion:} By the principle of induction, $P(n)$ is true for all $n\ge1 \in \Z$.
+\end{proof}
+\pagebreak
+\begin{problem}{17}
+$\newline \newline$
+$\displaystyle \prod_{i=0}^n \left( \cfrac{1}{2i+1} \cdot \cfrac{1}{2i+2} \right) = \cfrac{1}{(2n+2)!},$ for every integer $n \ge 0$.
+\end{problem}
+\begin{proof}(by induction) \\
+	\textbf{Base case;} $P(0):$ `` $\cfrac{1}{2(0)+1} \cdot \cfrac{1}{2(0)+2} \overset{?}{=} \cfrac{1}{(2(0)+2)!}$ '' $\cfrac{1}{2} \, \overset{\checkmark}{=} \, \cfrac{1}{2} $. True for $P(0)$ \\ \\
+	\textbf{Inductive step:} Let $k \in \Z \ni k \ge 0$ \\ \\
+	Assume $P(k)$, that is $\displaystyle \prod_{i=0}^k \left( \cfrac{1}{2i+1} \cdot \cfrac{1}{2i+2} \right) = \cfrac{1}{(2k+2)!}$ \\
+	\lbrack NTS $\displaystyle \prod_{i=0}^{k+1} \left( \cfrac{1}{2i+1} \cdot \cfrac{1}{2i+2} \right) = \cfrac{1}{(2(k+1)+2)!}$ or $\cfrac{1}{(2k+4)!}$\rbrack
+	\begin{align*}
+		 & = \displaystyle \prod_{i=1}^{k+1} \left( \cfrac{1}{2i+1} \cdot \cfrac{1}{2i+2} \right) \left( \cfrac{1}{2(k+1)+1} \cdot \cfrac{1}{2(k+1)+2} \right)                                     \\
+		 & = \left ( \cfrac{1}{(2k+2)!} \right ) \left( \cfrac{1}{2(k+1)+1} \cdot \cfrac{1}{2(k+1)+2} \right)                                                  &  & \text{by inductive hypothesis} \\
+		 & = \left( \cfrac{1}{2k+2+2} \cdot \cfrac{1}{2k+2+1} \right ) \left ( \cfrac{1}{(2k+2)!} \right )                                                                                         \\
+		 & = \cfrac{1}{(2k+2+2)!}                                                                                                                                                                  \\
+		 & =\cfrac{1}{(2k+4)!}
+	\end{align*}
+	$\therefore P(n)$ holds for $n = k + 1$ and the proof of the induction step is complete. \\
+	\textbf{Conclusion:} By the principle of induction, $P(n)$ is true for all $n\ge0 \in \Z$.
+\end{proof}
+
+\end{document}

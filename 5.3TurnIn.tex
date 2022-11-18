@@ -1,0 +1,93 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\pagestyle{fancy}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+% https://tex.stackexchange.com/questions/212085/tag-placing-with-amsmath
+% Moves the tag to the left or right side. Call \leqnomode or \reqnomode before the equation
+\makeatletter
+\newcommand{\leqnomode}{\tagsleft@true\let\veqno\@@leqno}
+\newcommand{\reqnomode}{\tagsleft@false\let\veqno\@@eqno}
+\makeatother
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 250}
+\chead{Luis Gascon}
+\rhead{Section 5.3}
+% \begin{problem}{15}
+% $\newline$
+% \end{problem}
+\begin{tcolorbox}[width=\textwidth,title={Problem 15},outer arc=0mm]
+	Prove by mathematical induction. \\
+	$n(n^{2}+5)\text{ is divisible by 6, for each integer } n \ge 0.$
+	\newline
+	\begin{proof}(by induction) \\
+		Let the property $P(n)$ be the sentence ``$n(n^{2}+5)$ is divisible by 6''.
+		\leqnomode
+		\begin{align}
+			\tag*{$P(n)\longrightarrow$} n(n^{2}+5)\text{ is divisible by 6}.
+		\end{align}
+		\textbf{Base case;} $P(0)$: ``$0(0^{0}+5)$ is divisible by 6''. True, $6 \mid 0$ since $6 \cdot 0 = 0$. \\
+		\textbf{Inductive hypothesis}: Let $k \in \Z \ni k \ge 0$. Assume $P(k)$, that is $6 \mid k(k^{2}+5)$. \\
+		Then $\exists \, r \in \Z \ni 6r = k(k^{2}+5)$ or $6r=k^{3}+5$ by definition of divisibility. \\
+		\lbrack \textbf{NTS:} $ 6 \mid (k+1)((k+1)^{2}+5)$ \rbrack \
+		\begin{align*}
+			(k+1)((k+1)^{2}+5) & = (k+1)(k^{2} + 2k + 1 +5)        &  & \text{by algebra}      \\
+			                   & = k(k^{2}+2k+5+1) + 1(k^{2}+2k+6)                             \\
+			                   & = k^{3}+5k+2k^{2}+k+k^{2}+2k+6                                \\
+			                   & = 6r + 3k^{2}+3k+6                &  & \text{by substitution} \\
+			                   & = 6r+6+3k(k+1)                    &  & \text{by algebra}      \\
+          \intertext{$k(k+1)$ are consecutive integers, and by the Parity Property (Theorem 4.5.2) $k$ and $k+1$ have opposite parity. Multiplying an odd and an even integer results in an even integer by Theorem 4.3.3. We let $S = k(k+1) \ni S$ is even and by definition of even $\exists \, a \in \Z \ni S = 2a$}
+			                   & = 6r + 6 + 3 \cdot 2a \\
+			                   & = 6(r + 1 + a)
+		\end{align*}
+		Let $t \in \Z$. $t \in \Z$ since $r ,\, 1, a \in \Z$ by closure of the integers under sums. \\
+		$6t=k(k^{2}+5)$ by substitution, where $t \in \Z$. \\
+		Therefore $ 6\mid k(k^{2}+5)$ by definition of divisibility. \\
+		% \vspace*{3in\textheight}
+	\end{proof}
+\end{tcolorbox}
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}

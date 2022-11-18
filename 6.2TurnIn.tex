@@ -1,0 +1,87 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 250}
+\chead{Luis Gascon}
+\rhead{Section 6.2}
+
+\begin{problem}{11}
+$\newline$
+Use an element argument to prove each statement. \\
+Assume that all sets are subsets of universal set $U$. \\ \\
+For all sets $A, B, \text{ and } C,$ \\
+$ A \cap (B \setminus  C) \subseteq (A \cap B) \setminus  (A \cap C).$
+\end{problem}
+\begin{proof}
+	Let $A, B \text{ and } C$ be sets. Let $x \in A \cap (B \setminus C)$. \\
+	Then by definition of intersection, $x \in A \text{ and } x \in (B \setminus C) $. \\
+	$x \in (B \setminus C) $ so $x \in B \text{ and } x \notin C $ by definition of set difference. \\
+	Since $x \in A \text{ and } x \in B$, $x \in (A \cap B)$ by definition of intersection. \\
+	$x \notin (A \cap C)$ since $x \in A$ and $x \notin C$. \\
+	Since $ x \in (A \cap B) \text{ and } x \notin (A \cap C)$ by definition of set difference. \\
+	Hence $x \in (A \cap B) \setminus  (A \cap C)$ \\
+	$\therefore$ $ A \cap (B \setminus  C) \subseteq (A \cap B) \setminus  (A \cap C).$
+\end{proof}
+\begin{problem}{29}
+$\newline$
+Use the element method for proving a set equals the empty set to prove each statement.\\
+Assume that all sets are subsets of a universal set $U$. \\ \\
+For all sets $A, B, \text{ and } C,$ \\
+$(A\setminus C) \cap (B \setminus C) \cap (A\setminus B) = \varnothing$
+\end{problem}
+\begin{proof}(by contradiction): Let $A, B \text{ and } C$ be sets. \\
+	Suppose not. That is, suppose $\exists x \in (A\setminus C) \cap (B \setminus C) \cap (A\setminus B)$ \\
+	\begin{tabular}{@{}ll@{}}
+		Then $x \in (A \setminus C) \text{ and } x \in (B \setminus C) \text{ and } x \in (A \setminus B)$ & by definition of intersection.   \\
+		So $x \in A$ and $x \in B$ and $x \notin C$ and $x \notin B$                                       & by definition of set difference.
+	\end{tabular} \\
+	$\therefore x \in B \text{ and } x \notin B$, which is a contradiction. \\
+	So $(A\setminus C) \cap (B \setminus C) \cap (A\setminus B) = \varnothing$ \\
+	$\Rightarrow\!\Leftarrow$
+\end{proof}
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}
