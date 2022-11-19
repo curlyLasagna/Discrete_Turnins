@@ -50,6 +50,91 @@
 
 \begin{problem}{28}
 $\newline$
+\textbf{Theorem:} For all integers $a,b,$ and $c$, if $a \mid bc$ then $a \mid b$ or $a \mid c$.
+\end{problem}
+
+\begin{proof}
+	Let $a, b, c \in \Z \ni a \mid bc$ \\
+	Since $a \mid bc$, $\exists \; d \in \Z \ni ad = bc$ \\
+	\begin{align*}
+	\end{align*}
+\end{proof}
+
+\begin{problem}{29}
+$\newline$
+\textbf{Theorem:} For all integers $a$ and $b$, if $a \mid b$ then $a^{2} \mid b^{2}$.
+\end{problem}
+\begin{proof} Let $a,b \in \Z \ni a$ divides $b$ \\
+	By definition of divisibility,
+	\begin{center}
+		$\exists \; k \in \Z \ni b = ak $
+	\end{center}
+	\begin{align*}
+		b^{2} & = (ak)^{2} &  & \text{by substitution}          \\
+		      & = (ak)(ak) &  & \text{by algebra}               \\
+		      & = a(kak)   &  & \text{by associative property } \\
+	\end{align*}
+	Let $t = (kak)$, $t \in \Z$ since $a,k \in \Z$ \\
+	The sum and products of integers is an integer. \\
+	Therefore, $a^{2} \mid b^{2}$ by definition of divisibility since $b^{2} = at$ where $t \in \Z$ by substitution
+\end{proof}
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+		\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 250}
+\chead{Luis Gascon}
+\rhead{Section 4.4}
+
+% \maketitle
+
+\begin{problem}{28}
+$\newline$
 <<<<<<< HEAD
 For all integers $a,b,$ and $c$, if $a \mid bc$ then $a \mid b$ or $a \mid c$. \\
 False
