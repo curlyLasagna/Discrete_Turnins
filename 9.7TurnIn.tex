@@ -1,4 +1,4 @@
-\message{ !name(5.3TurnIn.tex)}% --------------------------------------------------------------
+% --------------------------------------------------------------
 % This is all preamble stuff that you don't have to worry about.
 % Head down to where it says "Start here"
 % --------------------------------------------------------------
@@ -8,8 +8,6 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amsthm,amssymb,scrextend}
 \usepackage{fancyhdr}
-\usepackage{tcolorbox}
-\usepackage{graphicx}
 \pagestyle{fancy}
 
 
@@ -38,16 +36,7 @@
 \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
     \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 
-% https://tex.stackexchange.com/questions/212085/tag-placing-with-amsmath
-% Moves the tag to the left or right side. Call \leqnomode or \reqnomode before the equation
-\makeatletter
-\newcommand{\leqnomode}{\tagsleft@true\let\veqno\@@leqno}
-\newcommand{\reqnomode}{\tagsleft@false\let\veqno\@@eqno}
-\makeatother
 \begin{document}
-
-\message{ !name(5.3TurnIn.tex) !offset(-3) }
-
 
 % --------------------------------------------------------------
 %                         Start here
@@ -55,33 +44,23 @@
 
 \lhead{Math 250}
 \chead{Luis Gascon}
-\rhead{Section 5.3}
-% \begin{problem}{15}
-% $\newline$
-% \end{problem}
-\begin{tcolorbox}[width=\textwidth,title={Problem 15},outer arc=0mm]
-	Prove by mathematical induction. \\
-	$n(n^{2}+5)\text{ is divisible by 6, for each integer } n \ge 0.$
-	\newline
-	\begin{proof}(by induction) \\
-		Let the property $P(n)$ be the sentence ``$n(n^{2}+5)$ is divisible by 6''.
-		\leqnomode
-		\begin{align}
-			\tag*{$P(n)\longrightarrow$} n(n^{2}+5)\text{ is divisible by 6}.
-		\end{align}
-		\textbf{Base case;} $P(0)$: ``$0(0^{0}+5)$ is divisible by 6''. True, $6 \mid 0$ since $6 \cdot 0 = 0$. \\
-		\textbf{Inductive hypothesis}: Let $k \in \Z \ni k \ge 0$. Assume $P(k)$, that is $6 \mid k(k^{2}+5)$. \\
-		Then $\exists \, r \in \Z \ni 6r = k(k^{2}+5)$ by definition of divisibility. \\
-		\lbrack \textbf{NTS:} $(k+1)((k+1)^{2}+5) = 6r$\rbrack \
-		\begin{align*}
-			(k+1)((k+1)^{2}+5) &= (k+1)(k^{2} + 2k + 1 +5) && \text{by algebra}\\
-		\end{align*}
-	\end{proof}
-\end{tcolorbox}
+\rhead{Section 9.7}
+
+\begin{problem}{2 WebAssign}
+$\newline$
+Use the binomial theorem to expand the following expression.
+$$
+    (u-5v)^4
+$$
+\begin{align*}
+    (u-5v)^4 & = \displaystyle\sum_{k=0}^{4}\binom{4}{k}u^{4-k}(-5v)^{k} && \parbox{3cm}{by the binomial theorem}\\
+             & = u^{4} + \binom{4}{1}u^{3}(-5v) + \binom{4}{2}u^2(-5v)^2+\binom{4}{3}u(-5v)^3+(-5v)^4 \\
+             & = u^4+4(-5)u^3v+6(25)u^2v^2 + 4(-125)uv^3 + 625v^4 && \text{by algebra}                                     \\
+             & = u^4 - 20u^3v + 150u^2v^2-500uv^3+625v^4
+\end{align*}
+\end{problem}
 
 % --------------------------------------------------------------
 %     You don't have to mess with anything below this line.
 % --------------------------------------------------------------
 \end{document}
-
-\message{ !name(5.3TurnIn.tex) !offset(-87) }

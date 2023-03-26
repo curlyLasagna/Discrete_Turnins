@@ -1,0 +1,108 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb,scrextend}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+\let\newproof\proof
+\renewenvironment{proof}{\begin{addmargin}[1em]{0em}\begin{newproof}}{\end{newproof}\end{addmargin}\qed}
+% \newcommand{\expl}[1]{\text{\hfill[#1]}$}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\lhead{Math 250}
+\chead{Luis Gascon}
+\rhead{Section 11.2}
+\begin{flushleft}
+    Prove the each statements. Use the theorem on polynomial orders and results from the theorems and exercises in Section 5.2 \\
+\end{flushleft}
+\begin{problem}{33}
+$\newline$
+\(1^3+2^3+3^3+\cdots+n^3\) is \(\theta(n^4)\)
+\end{problem}
+\begin{proof}
+    \begin{align*}
+        1^3+2^3+3^3+\cdots+n^3 & = \left[\cfrac{n(n+1)}{2}\right]^{2}                             \\
+                               & = \left(\cfrac{n^{2}+n}{4}\right)\left(\cfrac{n^{2}+n}{4}\right) \\
+                               & = \cfrac{n^{4}+2n^{3}+n^{2}}{16}
+    \end{align*}
+    \(\cfrac{n^{4}+2n^{3}+n^{2}}{16}\) is \(\theta(n^{4})\) by the theorem on polynomial orders.
+\end{proof}
+
+\begin{problem}{35}
+$\newline$
+\(5+10+15+20+25+ \cdots+5n\) is \(\theta(n^2)\)
+\end{problem}
+\begin{proof}
+    \begin{align*}
+        5(1+2+3+\cdots+n) & = 5(\cfrac{n(n+1)}{2})              \\
+                          & = \cfrac{5}{2}(n^{2}+n)             \\
+                          & = \cfrac{5}{2}n^{2} + \cfrac{5}{2}n
+    \end{align*}
+    \(\cfrac{5}{2}n^{2} + \cfrac{5}{2}n\) is \(\theta(n^2)\) by the theorem on polynomial orders.
+\end{proof}
+\newpage
+\begin{problem}{37}
+$\newline$
+\(\displaystyle\sum_{k=1}^{n}(k+3)\) is \(\theta (n^{2})\)
+\end{problem}
+\begin{proof}
+    \begin{align*}
+        \displaystyle\sum_{k=1}^{n}k + 3\sum_{k=1}^{n} & = \cfrac{n(n+1)}{2}+3(n) \\
+                                                       & = \cfrac{n^2+n}{2} +3n   \\
+                                                       & = \cfrac{n^2+7n}{2}
+    \end{align*}
+    \({n^2+7n}{2}\) is \(\theta (n^{2})\) by the theorem on polynomial orders.
+\end{proof}
+
+\begin{problem}{39}
+$\newline$
+\(\displaystyle\sum_{k=3}^{n}(k^{2}-2k)\) is \(\theta(n^3)\)
+\end{problem}
+\begin{proof}
+    \begin{align*}
+        \displaystyle\sum_{k=3}^{n}k^2                    & = \cfrac{n(n+1)(2n+1)}{6} - 1^2 - 2^2                                               \\ \sum_{k=3}^{n}2k &= 2 \left( \cfrac{n(n+1)}{2} -1 - 2\right) \\
+        \displaystyle\sum_{k=3}^{n}k^2 - \sum_{k=3}^{n}2k & = \left( \cfrac{n(n+1)(2n+1)}{6} -5 \right)- 2 \left( \cfrac{n(n+1)}{2} - 3 \right) \\
+                                                          & = \cfrac{n(2n^2+3n+1)}{6} - 5 - n^2+n - 6                                                   \\
+                                                          & = \cfrac{2n^3+3n^2+n-30}{6}-\cfrac{6n^2+6n-36}{6}                                         \\
+                                                          & = \cfrac{2n^3-3n^2-5n + 6}{6}
+    \end{align*}
+    \(\cfrac{2n^3-3n^2-5n + 6}{6}\) is \(\theta(n^3)\) by the theorem on polynomial orders.
+\end{proof}
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+\end{document}
